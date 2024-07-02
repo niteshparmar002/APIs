@@ -23,7 +23,7 @@ router = DefaultRouter()
 router.registry.extend(router.registry)
 
 urlpatterns = [
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('secret/', admin.site.urls),
     path('', include('home.apiurls')),
 ]
