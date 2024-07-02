@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from home.apiurls import router 
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = DefaultRouter()
 router.registry.extend(router.registry)
@@ -27,3 +29,5 @@ urlpatterns = [
     path('secret/', admin.site.urls),
     path('', include('home.apiurls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
