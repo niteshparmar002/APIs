@@ -7,7 +7,7 @@ from . import api
 router = DefaultRouter()
 router.register('login', api.UserLoginView, basename='api_login')
 router.register('signup', api.UserCreationView, basename='api_sign')
-router.register('post', api.PostViewSet, basename='post')
+# router.register('post', api.PostViewSet, basename='post')
 
 urlpatterns = [
 	path('', include(router.urls)),
